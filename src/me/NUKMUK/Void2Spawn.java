@@ -17,7 +17,7 @@ public class Void2Spawn extends JavaPlugin implements Listener {
     @EventHandler
     public void onMove(PlayerMoveEvent e){
         Player p = e.getPlayer();
-        if(p.getLocation().getY() <= 0){
+        if(e.getTo().getY() <= 0){
             Location l = p.getWorld().getSpawnLocation().add(0.5, 0, 0.5);
             l.setYaw(p.getLocation().getYaw());
             p.teleport(l);
